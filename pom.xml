@@ -6,7 +6,6 @@
     <packaging>war</packaging>
     <name>springProject</name>
     <description>spring project practice</description>
-
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
         <dependency>

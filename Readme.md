@@ -38,3 +38,21 @@
          주말 및 다른 일로 인해서 연습 못함 월요일부터 할 예정      
          
          ***
+         
+* 3월 8일
+    * Spring MVC Project를 통한 웹페이지 연습 시작 2
+         ***
+         
+             <context-param>
+                 <param-name>contextConfigLocation</param-name>
+                 <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+             </context-param>
+             
+            을 하지 않았다가 계속 삽질만 한거 같다
+            
+            현재 고쳐야 할 부분은 Tomcat에서 로그가 한글이 깨지니 UTF-8을 적용해주는것
+            앞단을 조금 꾸며보는 것이고
+            
+            이제부터 스프링 프레임워크를 통한 어노테이션을 이용하다 보니 정말로 편해지는 것을 느끼게 되었다.     
+         
+         ***
