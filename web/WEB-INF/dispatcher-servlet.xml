@@ -21,8 +21,8 @@
 
 <!--    &lt;!&ndash; 1. dataSource 설정 &ndash;&gt;-->
 <!--    <bean id = "dataSource" class = "org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
-<!--        <property name="driverClass" value="org.mariadb.jdbc.Driver" />-->
-<!--        <property name="url" value="jdbc:mariadb://localhost:3306/mysql/users" />-->
+<!--        <property name="driverClass" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/example" />-->
 <!--        <property name="username" value="root" />-->
 <!--        <property name="password" value="1234" />-->
 <!--    </bean>-->
