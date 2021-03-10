@@ -19,25 +19,25 @@
         <property name="order" value="1"/>
     </bean>
 
-<!--    &lt;!&ndash; 1. dataSource 설정 &ndash;&gt;-->
-<!--    <bean id = "dataSource" class = "org.springframework.jdbc.datasource.SimpleDriverDataSource">-->
-<!--        <property name="driverClass" value="com.mysql.jdbc.Driver" />-->
-<!--        <property name="url" value="jdbc:mysql://localhost:3306/example" />-->
-<!--        <property name="username" value="root" />-->
-<!--        <property name="password" value="1234" />-->
-<!--    </bean>-->
-<!--    &lt;!&ndash;  2. 트랜잭션 관리자 등록 &ndash;&gt;-->
-<!--    <bean id = "transactionManager" class = "org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-<!--        <property name="dataSource" ref="dataSource"/>-->
-<!--    </bean>-->
-<!--    &lt;!&ndash; 3. 마이바티스 설정 &ndash;&gt;-->
-<!--    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-<!--        <property name="dataSource" ref="dataSource" />-->
-<!--        <property name="configLocation" value="classpath:/mybatis-config.xml"/>-->
-<!--    </bean>-->
-<!--    &lt;!&ndash; 4.  위의 부분을 이제 다룰 수 있는 리모컨(Template)기능 추가 &ndash;&gt;-->
-<!--    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">-->
-<!--        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean" />-->
-<!--    </bean>-->
+    <!-- 1. dataSource 설정 -->
+    <bean id = "dataSource" class = "org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/example" />
+        <property name="username" value="root" />
+        <property name="password" value="1234" />
+    </bean>
+    <!--  2. 트랜잭션 관리자 등록 -->
+    <bean id = "transactionManager" class = "org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 3. 마이바티스 설정 -->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
+    </bean>
+    <!-- 4.  위의 부분을 이제 다룰 수 있는 리모컨(Template)기능 추가 -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean" />
+    </bean>
 
 </beans>
