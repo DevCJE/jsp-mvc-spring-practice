@@ -115,3 +115,64 @@
             크롬 F12 개발자도구를 이용하여서 한거라 남아있는것이 없음
             
          ***
+         
+```
+
+      
+(function () {
+
+    // 기본 function 정의
+
+    'use strict'
+    // 스크립트 시작
+    
+  
+  var subNum = getParameterByName("category") // 카테고리 체크
+  
+  function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+  
+
+  function findSubject(subNum){
+    
+      for(var i=0; i<document.getElementsByClassName('first').length; i++){
+        var checkSubject = document.getElementsByClassName('first')[i].nextSibling.nextSibling.innerText
+        if(checkSubject == "게임머니" && subNum == 1){
+          var result = document.getElementsByClassName('first')[i].parentNode.getElementsByClassName('left')[0].getElementsByTagName('input')[0].value
+          return result
+        }
+        if(checkSubject == "아이템" && subNum == 3){
+          var result = document.getElementsByClassName('first')[i].parentNode.getElementsByClassName('left')[0].getElementsByTagName('input')[0].value
+          return result
+        }
+        if(checkSubject == "기타" && subNum == 7){
+          var result = document.getElementsByClassName('first')[i].parentNode.getElementsByClassName('left')[0].getElementsByTagName('input')[0].value
+          return result
+        }
+      }
+    
+  }
+  
+  function updateArticle(id){
+    var frm = $("#reInsertFrm");
+		frm.find("[name='id']").val(id);
+		frm.attr("action", "sell_re_reg_auto_ok.php");
+		frm.submit();
+  }
+  
+  // 스크립트 시작
+  var articleId=findSubject(subNum)
+  var page = getParameterByName("page")
+  if(!articleId && page == 3){
+    location.href="http://www.itemmania.com/myroom/sell/sell_regist.html?page=4&strRelationType=regist&category="+subNum
+  } else if(!articleId && page == 4 ) {
+    location.href="http://www.itemmania.com/myroom/sell/sell_regist.html?page=5&strRelationType=regist&category="+subNum
+  } else {
+    updateArticle(articleId)
+  }
+
+```
